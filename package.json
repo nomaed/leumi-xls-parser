@@ -1,10 +1,12 @@
 {
-  "name": "leumi-xls-parse",
+  "name": "leumi-xls-parser",
   "version": "1.0.0",
   "description": "Parses Bank Leumi exported XLS files into a JSON object",
   "main": "src/index.js",
   "bin": "src/cli.js",
-  "browser": true,
+  "browser": {
+    "./src/index.js": "./src/browser.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

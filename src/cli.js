@@ -1,8 +1,8 @@
 #!/usr/bin/env node
+
 const path = require('path');
 const fs = require('fs').promises;
-const leumiXlsParser = require('./leumiXlsParser');
-const JSDOM = require("jsdom").JSDOM;
+const leumiXlsParser = require('./index');
 
 function printUsage() {
     const relPath = path.relative(process.cwd(), __filename);
@@ -16,11 +16,8 @@ if (!process.argv[2]) {
 }
 fs.readFile(process.argv[2])
     .then(data => {
-        console.log('Data read; %d bytes', data.byteLength);
         if (leumiXlsParser.isCompatible(data)) {
-            return leumiXlsParser.parse(
-                new JSDOM(data).window.document.querySelector('table.dataTable')
-                );
+            return leumiXlsParser.parse(data);
         } else {
             throw new TypeError('Data is not a valid Leumi XLS file');
         }
