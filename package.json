@@ -1,15 +1,16 @@
 {
-  "name": "test-read-xls",
+  "name": "leumi-xls-parse",
   "version": "1.0.0",
-  "description": "",
+  "description": "Parses Bank Leumi exported XLS files into a JSON object",
   "main": "src/index.js",
-  "bin": "src/index.js",
+  "bin": "src/cli.js",
+  "browser": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Boris Aranovoch <nomaed@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "jsdom": "^12.0.0"
+    "jsdom": "12.0.0"
   }
 }
