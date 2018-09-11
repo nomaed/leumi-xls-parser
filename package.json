@@ -14,5 +14,9 @@
   "license": "MIT",
   "dependencies": {
     "jsdom": "12.0.0"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://gitlab.com/nomaed/leumi-xls-parser.git"
   }
 }
