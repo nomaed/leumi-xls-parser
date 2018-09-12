@@ -1,17 +1,13 @@
-const leumiXlsParser = require('./leumiXlsParser');
+/**
+ * Node.JS & Browser compatible version, uses DOMParser in browser or
+ * imports JSDOM on demand in node environment.
+ */
+
+const leumiXlsParser = require('./parser');
+const getTableDom = require('./parseHtml');
 
 module.exports = {
     isCompatible: leumiXlsParser.isCompatible,
-    parse: htmlString => leumiXlsParser.parse(getTableDom(htmlString))
-}
-
-function getTableDom(htmlString) {
-    if (typeof DOMParser === 'undefined') {
-        // Node.JS
-        const JSDOM = require("jsdom").JSDOM;
-        return new JSDOM(htmlString).window.document.querySelector('table.dataTable');
-    }
-
-    // browser
-    return new DOMParser().parseFromString(htmlString, 'text/html').querySelector('table.dataTable');
+    parse: htmlString => leumiXlsParser.parse(getTableDom(htmlString)),
+    parseSync: htmlString => leumiXlsParser.parseSync(getTableDom(htmlString)),
 }

@@ -5,10 +5,7 @@
   "main": "src/index.js",
   "bin": "src/cli.js",
   "browser": {
-    "./src/index.js": "./src/browser.js"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "./src/parseHtml.js": "./src/parseHtml.browser.js"
   },
   "author": "Boris Aranovoch <nomaed@gmail.com>",
   "license": "MIT",
