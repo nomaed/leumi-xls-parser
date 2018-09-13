@@ -1,6 +1,6 @@
 {
   "name": "leumi-xls-parser",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Parses Bank Leumi exported XLS files into a JSON object",
   "main": "./src/index.js",
   "bin": "./src/cli.js",
