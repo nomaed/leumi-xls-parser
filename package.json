@@ -2,14 +2,16 @@
   "name": "leumi-xls-parser",
   "version": "1.0.3",
   "description": "Parses Bank Leumi exported XLS files into a JSON object",
-  "main": "src/index.js",
-  "bin": "src/cli.js",
+  "main": "./src/index.js",
+  "bin": "./src/cli.js",
   "browser": {
     "./src/parseHtml.js": "./src/parseHtml.browser.js"
   },
+  "types": "./index.d.ts",
   "author": "Boris Aranovoch <nomaed@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/node": "^10.9.4",
     "jsdom": "12.0.0"
   },
   "repository": {

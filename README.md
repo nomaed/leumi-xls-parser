@@ -23,13 +23,23 @@ if (leumiXlsParser.isCompatible(xlsFile)) {
 }
 ```
 
-## History
+## API
 
-TODO: Write history
+```ts
+function isCompatible(input: string | Buffer): boolean;
+function parse(input: string | Buffer): Promise<Array<LeumiRecord>>;
+function parse(input: string | Buffer, callback: (err: Error, data?: string | Buffer) => void): void;
+function parseSync(input: string | Buffer): Array<LeumiRecord>;
 
-## Credits
-
-TODO: Write credits
+interface LeumiRecord {
+    date: Date;
+    description: string;
+    reference: string;
+    expense: number;
+    income: number;
+    balance: number;
+}
+```
 
 ## License
 
