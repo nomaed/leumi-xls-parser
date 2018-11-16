@@ -28,7 +28,7 @@ if (leumiXlsParser.isCompatible(xlsFile)) {
 ```ts
 function isCompatible(input: string | Buffer): boolean;
 function parse(input: string | Buffer): Promise<Array<LeumiRecord>>;
-function parse(input: string | Buffer, callback: (err: Error, data?: string | Buffer) => void): void;
+function parse(input: string | Buffer, callback: (err?: Error, data?: Array<LeumiRecord>) => void): void;
 function parseSync(input: string | Buffer): Array<LeumiRecord>;
 
 interface LeumiRecord {
